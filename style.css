@@ -1,0 +1,299 @@
+/* Allgemeine Stile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.background {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(img/background.png);
+    background-position: center;
+    background-size: cover;
+    padding: 10px 10%;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: right; /* Zentriert die Buttons */
+    align-items: center;
+    padding: 10px 0;
+}
+
+nav div {
+    display: flex;
+    gap: 20px; /* Abstand zwischen den Buttons */
+}
+
+nav a {
+    text-decoration: none;
+    padding: 12px 24px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    background: linear-gradient(45deg, #31e3fb, #b23ef1);
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    transition: 0.5s;
+}
+
+nav a:hover {
+    border-top-right-radius: 30px;
+    transform: scale(1.1); /* Kleine Vergrößerung beim Hover */
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 10px 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+}
+
+/* Social Media */
+.SocialMedia {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 40px;
+    color: #fff;
+    background-image: linear-gradient(45deg, #31e3fb, #b23ef1);
+    font-size: 14px;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    transition: 0.5s;
+}
+
+.home {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 40px;
+    color: #fff;
+    background-image: linear-gradient(45deg, #31b4fb, #b23ef1);
+    font-size: 14px;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    transition: 0.5s;
+}
+
+.home.animation {
+    animation-delay: 0.5s;
+}
+
+/* Inhalt */
+.content {
+    margin-top: 10%;
+    max-width: 600px;
+}
+
+.content h1 {
+    font-size: 50px;
+    font-weight: 100;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.content p {
+    margin: 10px 0 30px;
+    color: #333;
+    animation-delay: 0.5s;
+}
+
+.content .SocialMedia {
+    padding: 15px 80px;
+    font-size: 16px;
+    animation-delay: 1s;
+}
+
+.SocialMedia:hover {
+    border-top-right-radius: 30px;
+}
+
+.home:hover {
+    border-top-right-radius: 30px;
+}
+
+/* Bilder */
+.me {
+    width: 530px;
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+}
+
+.me.animation {
+    animation-delay: 1s;
+}
+
+.cat {
+    width: 400px;
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+}
+
+.cat.animation {
+    animation-delay: 1s;
+}
+
+/* Animationen */
+.animation {
+    opacity: 0;
+    transform: translate(30px);
+    animation: moveup 0.5s linear forwards;
+    font-family: fantasy;
+}
+
+@keyframes moveup {
+    100% {
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+
+/* FunFact */
+.funfact button {
+    padding: 10px 20px;
+    background-color: #31e3fb;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.funfact button:hover {
+    background-color: #29b8f1;
+}
+
+.funfact-list {
+    margin-top: 60px;
+    text-align: right;
+}
+
+.funfact-list li {
+    background-color: #f7f7f7;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    list-style-type: none;
+}
+
+/* Fly Animation */
+.fly {
+    width: 200px;
+    position: fixed; /* Bleibt auf dem Bildschirm beim Scrollen */
+    bottom: -100px; /* Startet unterhalb des sichtbaren Bereichs */
+    left: -250px; /* Startet links außerhalb des Bildschirms */
+    z-index: 1000;
+}
+
+@keyframes fly {
+    0% {
+        left: -250px;
+        bottom: -100px;
+    }
+    100% {
+        left: 100vw; /* Fliegt bis zum rechten Rand */
+        bottom: 100vh; /* Fliegt bis zum oberen Rand */
+    }
+}
+
+.aboutme-page {
+    width: 100%;
+    min-height: 200vh; /* Höher machen, damit gescrollt werden kann */
+    background-image: url(img/background.png);
+    background-position: center;
+    background-size: cover;
+    padding: 10px 10%;
+    overflow-y: auto; /* Scrollen erlauben */
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    /* Navigation anpassen */
+    nav {
+        justify-content: center; /* Zentriert die Navigation auf kleineren Bildschirmen */
+    }
+
+    .content {
+        margin-top: 5%;
+        max-width: 90%; /* Mehr Platz auf kleinen Bildschirmen */
+    }
+
+    .content h1 {
+        font-size: 36px; /* Kleinere Schrift für Mobilgeräte */
+    }
+
+    .content p {
+        font-size: 14px; /* Kleinere Schrift für Mobilgeräte */
+    }
+
+    /* Bilder anpassen */
+    .me, .cat {
+        width: 80%; /* Bilder anpassen */
+        position: relative;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Navigation anpassen */
+    nav div {
+        flex-direction: column; /* Navigation auf kleinen Bildschirmen stapeln */
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+
+    .content h1 {
+        font-size: 28px; /* Noch kleinere Schrift */
+    }
+
+    .content p {
+        font-size: 12px;
+    }
+
+    .me, .cat {
+        width: 90%; /* Noch kleinere Bilder */
+    }
+}
+.insta{
+    width: 200px;
+    position: absolute;
+    bottom: 50%; /* Reduziere diesen Wert, um das Bild weiter nach oben zu verschieben */
+    right: 40%;
+}
+/* Container für das Video */
+.video-container {
+    position: fixed; /* Fixiert das Video */
+    bottom: 0; /* Setzt das Video an den unteren Rand des Bildschirms */
+    left: 0; /* Setzt das Video an den linken Rand des Bildschirms */
+    width: 100%; /* Das Video nimmt die gesamte Breite des Bildschirms ein */
+    text-align: center; /* Zentriert das Video */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Optional: Hintergrundfarbe für den Bereich */
+}
+
+/* Optional: Das Video skalieren */
+.video-container video {
+    width: 100%; /* Video nimmt 100% der Breite des Containers ein */
+    max-width: 320px; /* Maximale Breite des Videos */
+    height: auto; /* Automatische Höhe basierend auf der Breite */
+}

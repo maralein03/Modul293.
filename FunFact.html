@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FunFacts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/me.png">
+</head>
+<body>
+    <div class="background page">
+        <nav>
+            <div>
+                <a href="FunFact.html" class="SocialMedia">FunFacts</a>
+                <a href="SocialMedia.html" class="SocialMedia">SocialMedia</a>
+                <a href="AboutMe.html" class="SocialMedia">AboutMe</a>
+                <a href="index.html" class="home">Home</a>
+            </div>
+        </nav>
+        <div class="content funfact">
+            <h1>Interessante FunFacts</h1>
+            <ul id="funfact-list">
+                <li>Ich gehe bei Gelegenheit ins Tierheim und laufe mit Hunden</li>
+            </ul>
+            <br><h2>Erzähle mir von deinem FunFact</h2>
+            <form id="funfact-form">
+                <br><label for="name">Dein Name:<br></label>
+                <input type="text" id="name" name="name" required>
+                
+                <br><label for="funfact" >Dein FunFact:<br></label>
+                <textarea id="funfact" name="funfact" rows="4" required></textarea>
+                
+                <br>
+                <button type="submit">Eintragen</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

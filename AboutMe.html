@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AboutMe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/me.png">
+</head>
+<body>
+    <div class="background aboutme-page">
+        <nav>
+            <div>
+                <a href="FunFact.html" class="SocialMedia">FunFacts</a>
+                <a href="SocialMedia.html" class="SocialMedia">SocialMedia</a>
+                <a href="AboutMe.html" class="SocialMedia">AboutMe</a>
+                <a href="index.html" class="home">Home</a>
+            </div>
+        </nav>
+        
+        <!-- Inhalt -->
+        <div class="content">
+            <h1>Über Mich</h1>
+            <ul>
+                <li>Ich heiße Mara</li>
+                <li>Bin 20 Jahre alt</li>
+                <li>Mein Geburtsdatum ist am 03.01.2005</li>
+                <li>Lebe alleine in einer 1-Zimmer-Wohnung</li>
+                <li>Ich habe leider keine Geschwister und nur noch eine Mama</li>
+                <li>Ich mache aktuell meine Ausbildung zur Informatikerin bei der Roche</li>
+                <li>Spreche neben Deutsch und Englisch auch fließend Rumänisch und gebrochenes Französisch</li>
+                <li>Ich habe eine Katze als Haustier und sie heißt Mimi</li>
+            </ul>   
+        </div>
+
+        <!-- Text, der beim Scrollen erscheint -->
+        <br><div class="scrolling-content">
+            <h1>Meine Katze</h1>
+            <video id="myVideo" width="320" height="240" controls>
+                <source src="img/cat.MP4" type="video/mp4">
+                Dein Browser unterstützt das Video-Tag nicht.
+            </video>
+        </div>
+
+        <!-- Flugzeug Animation -->
+        <img src="img/flug.png" class="fly">
+    </div>
+    <div>
+        <
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let plane = document.querySelector(".fly");
+
+            if (!plane) {
+                console.error("Fehler: Flugzeug-Element nicht gefunden!");
+                return;
+            }
+
+            document.addEventListener("scroll", function() {
+                let scrollPosition = window.scrollY;
+                let screenWidth = window.innerWidth;
+                let screenHeight = window.innerHeight;
+
+                let newLeftPosition = -250 + (scrollPosition * 2); 
+                let newBottomPosition = -100 + (scrollPosition * 1.2); 
+
+                if (newLeftPosition > screenWidth) {
+                    newLeftPosition = -250; 
+                    newBottomPosition = -100;
+                }
+
+                plane.style.left = newLeftPosition + "px";
+                plane.style.bottom = newBottomPosition + "px";
+            });
+
+            // Video beim Scrollen abspielen
+            document.addEventListener('scroll', function () {
+                const video = document.getElementById('myVideo');
+                const videoPosition = video.getBoundingClientRect().top;
+                const screenHeight = window.innerHeight;
+
+                if (videoPosition < screenHeight) {
+                    video.play(); // Video starten, wenn es sichtbar wird
+                }
+            });
+        });
+    </script>
+</body>
+</html>
